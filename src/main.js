@@ -75,13 +75,14 @@ class App {
 
         console.log(response);
 
-        const { name, description, html_url, avatar_url} = response.data
+        const { name, bio, html_url, avatar_url, location} = response.data
 
         this.repository.push({
             name,
-            description,
+            bio,
             avatar_url,
             html_url,
+            location,
         });
 
         console.log(this.repository)
@@ -97,13 +98,17 @@ class App {
             ImgEl.setAttribute('src', repo.avatar_url);
 
             let titleEl = document.createElement('strong');
-            titleEl.appendChild(document.createTextNode(repo.nome));
+            titleEl.appendChild(document.createTextNode(repo.name));
 
             let descriptionEl = document.createElement('p');
-            descriptionEl.appendChild(document.createTextNode(repo.description));
+            descriptionEl.appendChild(document.createTextNode(repo.bio));
+
+            let locationEl = document.createElement('p');
+            locationEl.appendChild(document.createTextNode(repo.location));
 
             let linkEl = document.createElement('a');
             linkEl.setAttribute('target', '_blank');
+            linkEl.setAttribute('href', repo.html_url)
             linkEl.appendChild(document.createTextNode('Acessar'));
             
             let listItemEl = document.createElement('li');
