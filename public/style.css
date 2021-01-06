@@ -1,3 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+
+    font-family: 'Open Sans' sans-serif;
+}
+
+body{
+
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    flex-direction: column;
+}
 
 ul{
     list-style: none;
@@ -6,17 +26,44 @@ ul{
     font-family: sans-serif;
 }
 li{
+    padding: 20px 0;
     clear: both;
-    margin-top: 20px;
+    border-bottom: 1px solid #dbdbdb;
 }
 img{
     width: 80px;
     float: left;
     margin-right: 10px;
+    border-radius: 50px;
 }
 strong{
     font-size: 20px;
 }
 p{
     margin: 5px 0;
+}
+
+input{
+    border: none;
+
+    -webkit-appearance: none;
+    -ms-appearence: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    background: #f2f2f2;
+
+    padding: 12px;
+    border-radius: 3px;
+
+    width: 250px;
+
+}
+
+input:focus::placeholder{
+    color: transparent;
+}
+input::placeholder{
+    color: #222;
+    transition: color .3 ease;
 }
